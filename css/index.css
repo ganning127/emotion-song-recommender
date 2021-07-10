@@ -109,3 +109,15 @@ hr {
 	background-color: rgba(210, 255, 210, 0.5) !important;
 	color: #006400 !important;
 }
+
+.separator {
+    height: 30rem;
+}
+
+.f {
+    border: 2px solid red;
+}
+
+.hidden {
+    display: none;
+}

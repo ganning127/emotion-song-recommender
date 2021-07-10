@@ -1,10 +1,7 @@
 {
-    "anger": [],
-    "contempt": [],
-    "disgust": [],
-    "fear": [],
-    "happiness": ["https://open.spotify.com/playlist/1h90L3LP8kAJ7KGjCV2Xfd", ],
-    "neutral": [],
-    "sadness": ["https://open.spotify.com/playlist/37i9dQZF1DX7qK8ma5wgG1"],
-    "surprise": []
+    "anger": ["https://open.spotify.com/playlist/1plupIIInS8UrUg0rJ0LuX", "https://open.spotify.com/playlist/0FTfYXyKt3iVHelzOCwu2j", "https://open.spotify.com/playlist/3tJFuAWBEKOeTmXCohynBm"],
+    "fear": ["https://open.spotify.com/playlist/5AM4lgcUAw5sokybXj3ny7", "https://open.spotify.com/album/4025fUQ8qeQTXcWpnLVoIB"],
+    "happiness": ["https://open.spotify.com/playlist/1h90L3LP8kAJ7KGjCV2Xfd", "https://open.spotify.com/playlist/1h90L3LP8kAJ7KGjCV2Xfd", "https://open.spotify.com/playlist/51O3drk38q8VgnMtPouPO1", "https://open.spotify.com/playlist/2lmcuXNkjYOoQeXvwqvvFT", "https://open.spotify.com/playlist/3WYmyXrEqRL1UnV3ep13ie", "https://open.spotify.com/playlist/7mBbVBqHJcvVC7Bnt0fypl", "https://open.spotify.com/playlist/1NbLeyUAfL5jqhCEMxS9LT"],
+    "neutral": ["https://open.spotify.com/playlist/3wcS0zPFvMsr3deGg3cbA5", "https://open.spotify.com/playlist/1euWwe7Y2FBqLj14kzlv4Y"],
+    "sadness": ["https://open.spotify.com/playlist/0zHkISuEcNr2Zav2X4TXCQ", "https://open.spotify.com/playlist/37i9dQZF1DX7qK8ma5wgG1", "https://open.spotify.com/playlist/68fdet4g2iehuwN29g3z1w", "https://open.spotify.com/playlist/1cfcDO3jiCv72yVq3TTkr5", "https://open.spotify.com/playlist/3c0Nv5CY6TIaRszlTZbUFk"]
 }
