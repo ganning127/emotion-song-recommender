@@ -14,10 +14,6 @@ nav {
     background-color: rgba(210, 255, 210, 0.5);
   }
 
-.navbar-toggler-icon {
-    background-color: red;
- }
-
 .logo-text {
 	font-size: 2rem;
 	color: #006400;

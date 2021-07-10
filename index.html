@@ -1,59 +1,103 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/index.css">
   <title>Spemo</title>
 </head>
+
 <body>
-  <nav class="navbar sticky-top navbar-expand-lg" id="navbar-main">
+  <nav class="navbar sticky-top navbar-expand-sm" id="navbar-main">
     <div class="container-fluid">
-       
-       <a class="navbar-brand" href="index.html">
+
+      <a class="navbar-brand" href="index.html">
         <img src="./img/logo.png" width="60" height="60" class="d-inline-block align-middle bounce-logo" alt="">
-          <p class="d-inline align-middle logo-text effect-underline">Spemo</p>
-       </a>
-       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon"></span>
-       </button>
-       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul class="navbar-nav nav-pills">
-            <li class="nav-item">
-              <a class="nav-link active"  href="index.html">Home</a>
-           </li>
-           <li class="nav-item">
-              <a class="nav-link" href="#">Genre Picker</a>
-           </li>
-           <li class="nav-item">
-              <a class="nav-link" href="#">Learn</a>
-           </li>
-           <li class="nav-item">
+        <p class="d-inline align-middle logo-text effect-underline">Spemo</p>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Genre Picker</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Learn</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#" target="_blank">Blog</a>
-         </li>
+          </li>
 
 
-          </ul>
-       </div>
-    </div>
- </nav>
-
- <section class="cover">
-   <div class="content-container d-flex justify-content-center align-items-center">
-    <div class="container d-flex justify-content-center align-items-center">
-      <div class="content">
-        dskl;fjsdajfl;sd
+        </ul>
       </div>
     </div>
-  </div>
- </section>
+  </nav>
 
+  <section class="cover">
+    <div class="content-container d-flex justify-content-center align-items-center">
+      <div class="container d-flex justify-content-center align-items-center">
+        <div class="row f">
+          <div class="col-md-6 mx-auto">
+            <h1 class="display-2 dk-gr">Spermo</h1>
+            <p class="lead dk-gr">Upload a picture, and get a personalized song!</p>
+
+
+
+            <form action enctype="multipart/form-data" onsubmit="getSong(event)" id="songForm">
+
+              <div class="custom-file mb-3">
+
+
+                <input type="file" class="custom-file-input" id="file-upload" name="attachment">
+
+                <label class="custom-file-label" for="file-upload" id="fileName">Upload an image</label>
+
+                <input type="submit" id="submit-button" class="btn btn-outline-success form-button hover-effect">
+
+
+              </div>          
+           </form>
+      </div>
+      <div class="col-md-4  mx-auto">
+        <img src="./img/smiley.png" alt="smiley face" class="img-fluid">
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="results">
+    <h1 class='display-4 text-center'>Results</h1>
+    <div class="container">
+      <div class="row" id="emotion">
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <img src="./img/musicemotionpicture.jpg" style="height: 500px; width: 500px; text-align: left;">
+  <h3>Welcome to Spemo a website that recommends you the best tunes that match your real time emotion</h3>
+  <h4>Scan these QR codes for an AR suprise</h4>
+  <img src="./img/dance" style="height: 50px; width: 50px; display: inline;">
+  <img src="./img/guitar" style="height: 50px; width: 50px; display: inline;">
+  <img src="./img/piano" style="height: 50px; width: 50px; display: inline;">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/rec.js"></script>
 </body>
+
 </html>
