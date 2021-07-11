@@ -12,6 +12,7 @@ $('#file-upload').on('change', function() {
 
 function getSong(event) {
     event.preventDefault();
+    
     spinner.classList.remove('hidden');
     const file = fileInput.files[0];
     var songForm = document.getElementById("songForm") 
@@ -29,12 +30,17 @@ function getSong(event) {
 
             const emotion = manipulateEmotion(data.emotion)
 
+                if (!(emotion === "We could not detect a face!")) {
+                    const playlistUrl = getPlaylistUrls(emotion)
+                }
+
             const playlistUrl = getPlaylistUrls(emotion)
 
-            console.log(playlistUrl)
             document.getElementById("emotion").innerHTML = emotion;
             results.classList.remove('hidden');
             spinner.classList.add("hidden")
+            scrollTo("anchor")
+            
         })
 }
 
@@ -60,8 +66,6 @@ function getPlaylistUrls(emotion) {
         const url = randomItem(json[emotion]);
         const embedUrl = createEmbedUrl(url);
         setPlaylistIframe(embedUrl);
-        
-        
     });
 
 }
@@ -74,9 +78,6 @@ function randomItem(items) {
 function createEmbedUrl(url) {
     String.prototype.splice = function(idx, rem, str) {
         return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
-
-
-    
     };
 
     const index = url.indexOf("playlist")
@@ -90,3 +91,10 @@ function setPlaylistIframe(embedurl) {
 }
 
 
+
+
+
+function scrollTo(hash) {
+    console.log("scrolling")
+    location.hash = "#" + hash;
+  }
