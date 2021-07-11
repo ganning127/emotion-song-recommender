@@ -18,7 +18,7 @@ Webcam.set({
 
 Webcam.attach('#my_camera');
 
-console.log("HI")
+
 
 
 document.getElementById("snap").addEventListener('click', () => {
