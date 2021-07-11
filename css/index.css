@@ -106,8 +106,12 @@ hr {
 }
 
 .active {
-	background-color: rgba(210, 255, 210, 0.5) !important;
+	background-color: transparent !important;
 	color: #006400 !important;
+}
+
+.cover .nav-link .active {
+background-color: red ;
 }
 
 .separator {
@@ -120,4 +124,32 @@ hr {
 
 .hidden {
     display: none;
+}
+
+#preview  {
+    margin-top: 1rem;
+}
+
+.tab-content {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-pills {
+    padding: 0 !important;
+}
+
+
+.nav-pills li {
+    margin: 0 !important;
+}
+
+.nav-pills a {
+    margin: 0;
+    padding: 0;
+    margin-right: 2rem;
+}
+
+.nav-pills a:hover {
+    background-color: transparent;
 }

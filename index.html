@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/index.css">
-  <title>Spemo</title>
+  <title>Spotion</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
 
       <a class="navbar-brand" href="index.html">
         <img src="./img/logo.png" width="60" height="60" class="d-inline-block align-middle bounce-logo" alt="">
-        <p class="d-inline align-middle logo-text effect-underline">Spemo</p>
+        <p class="d-inline align-middle logo-text effect-underline">Spotion</p>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,33 +48,73 @@
       <div class="container d-flex justify-content-center align-items-center">
         <div class="row">
           <div class="col-md-6 mx-auto">
-            <h1 class="display-2 dk-gr">Spermo</h1>
+            <h1 class="display-2 dk-gr">Spotion</h1>
             <p class="lead dk-gr">Upload a picture, and get a personalized song!</p>
 
 
 
-            <form action enctype="multipart/form-data" onsubmit="getSong(event)" id="songForm">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Camera</a>
+              </li>
+              
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Upload</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
-              <div class="custom-file mb-3">
+                <div id="my_camera" class="camera mt-4
+                " >
 
 
-                <input type="file" class="custom-file-input" id="file-upload" name="attachment">
+                </div>
+     
+                <button id="snap" class=" btn hover-effect">Snap</button>
+                
+                <div id="preview" class="hidden camera">
+                  
+                </div>
+                <button class="btn hover-effect hidden" id="submit-pic">Use Picture</button>
 
-                <label class="custom-file-label" for="file-upload" id="fileName">Upload an image</label>
+              </div>
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 
-                <input type="submit" id="submit-button" class="btn btn-outline-success form-button hover-effect">
+                <form action enctype="multipart/form-data" onsubmit="getSong(event)" id="songForm">
+
+                  <div class="custom-file mb-3">
+    
+    
+                    <input type="file" class="custom-file-input" id="file-upload" name="attachment">
+    
+                    <label class="custom-file-label" for="file-upload" id="fileName">Upload an image</label>
+    
+                    <input type="submit" id="submit-button" class="btn btn-outline-success form-button hover-effect">
+    
+    
+                  </div>          
+               </form>
+
+              </div>
+            </div>
 
 
-              </div>          
-           </form>
+            
+           
       </div>
-      <div class="col-md-4  mx-auto">
-        <img src="./img/smiley.png" alt="smiley face" class="img-fluid">
-      </div>
+
+        <div class="col-md-4  mx-auto img-container">
+          <img src="./img/smiley.png" alt="smiley face" class="img-fluid cover-img">
+        </div>
+          
+      
     </div>
     </div>
     </div>
   </section>
+
+  <div class="separator"></div>
 
   <div class="spinner text-center hidden">
     <div class="spinner-border text-success" role="status">
@@ -83,14 +123,16 @@
 </div>
 
 
+
   <section class="results emotionResults hidden">
     <h1 class='display-4 text-center'>Results</h1>
     
     <div class="container">
-      
+      <div id="anchor"></div>
       <div class="row">
         <div class="col-md-6 d-flex align-items-center" >
           <div class="content ">
+            
             <h1>Emotion</h1>
             <p class="lead" id="emotion">Sad</p>
           </div>
@@ -101,12 +143,13 @@
       </div>
     </div>
   </section>
+  
 
 
 <div class="separator"></div>
 
   <!-- <img src="./img/musicemotionpicture.jpg" style="height: 500px; width: 500px; text-align: left;">
-  <h3>Welcome to Spemo a website that recommends you the best tunes that match your real time emotion</h3>
+  <h3>Welcome to Spotion a website that recommends you the best tunes that match your real time emotion</h3>
   <h4>Scan these QR codes for an AR suprise</h4>
   <img src="./img/dance" style="height: 50px; width: 50px; display: inline;">
   <img src="./img/guitar" style="height: 50px; width: 50px; display: inline;">
@@ -115,6 +158,8 @@
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="webcamjs/webcam.min.js"></script>
+  <script src="./js/webcam.js"></script>
   <script src="./js/rec.js"></script>
 </body>
 
