@@ -35,8 +35,6 @@ function getSong(event) {
                 const song = getSongUrl(emotion)
             }
 
-            const playlistUrl = getPlaylistUrls(emotion)
-
             document.getElementById("emotion").innerHTML = data.emotion;
             results.classList.remove('hidden');
             spinner.classList.add("hidden")
