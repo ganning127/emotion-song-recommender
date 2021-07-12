@@ -32,6 +32,7 @@ function getSong(event) {
 
             if (!(emotion === "We could not detect a face!")) {
                 const playlistUrl = getPlaylistUrls(emotion)
+                const song = getSongUrl(emotion)
             }
 
             const playlistUrl = getPlaylistUrls(emotion)
