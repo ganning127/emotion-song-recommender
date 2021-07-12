@@ -30,13 +30,13 @@ function getSong(event) {
 
             const emotion = manipulateEmotion(data.emotion)
 
-                if (!(emotion === "We could not detect a face!")) {
-                    const playlistUrl = getPlaylistUrls(emotion)
-                }
+            if (!(emotion === "We could not detect a face!")) {
+                const playlistUrl = getPlaylistUrls(emotion)
+            }
 
             const playlistUrl = getPlaylistUrls(emotion)
 
-            document.getElementById("emotion").innerHTML = emotion;
+            document.getElementById("emotion").innerHTML = data.emotion;
             results.classList.remove('hidden');
             spinner.classList.add("hidden")
             scrollTo("anchor")
@@ -51,7 +51,7 @@ function manipulateEmotion(emotion) {
     if (emotion === "contempt") {
         finalEmotion = "anger"
     }
-    else if (emotion === "suprise") {
+    else if (emotion === "surprise") {
         finalEmotion = "neutral"
     }
     else if (emotion === "disgust") {
@@ -62,10 +62,10 @@ function manipulateEmotion(emotion) {
 }
 
 function getPlaylistUrls(emotion) {
-    $.getJSON("songs.json", function(json) {
+    $.getJSON("songs.json", function (json) {
         const url = randomItem(json[emotion]);
-        const embedUrl = createEmbedUrl(url);
-        setPlaylistIframe(embedUrl);
+        const embedUrl = createEmbedUrl(url, "playlist");
+        setIframe(embedUrl, "playlistIframe");
     });
 
 }
@@ -75,23 +75,32 @@ function randomItem(items) {
     return item;
 }
 
-function createEmbedUrl(url) {
-    String.prototype.splice = function(idx, rem, str) {
+function createEmbedUrl(url, type) {
+    String.prototype.splice = function (idx, rem, str) {
         return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
     };
 
-    const index = url.indexOf("playlist")
+    const index = url.indexOf(type)
 
     var result = url.splice(index, 0, "embed/");
     return result
 }
 
-function setPlaylistIframe(embedurl) {
-    document.getElementById("playlistIframe").src = embedurl
+function setIframe(embedurl, id) {
+    document.getElementById(id).src = embedurl
 }
 
 
 
+function getSongUrl(emotion) {
+    $.getJSON("playlists.json", function (json) {
+        const url = randomItem(json[emotion]);
+        console.log(url)
+        const embedUrl = createEmbedUrl(url, "track");
+        console.log(embedUrl)
+        setIframe(embedUrl, "songIframe");
+    });
+}
 
 
 function scrollTo(hash) {

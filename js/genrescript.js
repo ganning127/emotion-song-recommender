@@ -50,7 +50,7 @@ Picker.prototype.render = function(container) {
   $('#quiz-results').hide();
   
   // Write the name of the quiz
-  $('#quiz-name').text(this.quiz_name);
+  // $('#quiz-name').text(this.quiz_name);
   
   // Create a container for questions
   var question_container = $('<div>').attr('id', 'question').insertAfter('#quiz-name');
@@ -95,6 +95,7 @@ Picker.prototype.render = function(container) {
  
   // Add listener for the submit answers button
   $('#submit-button').click(function() {
+    
     // Determine how many questions the user got right
     var score = 0;
     for (var i = 0; i < self.questions.length; i++) {
@@ -105,7 +106,7 @@ Picker.prototype.render = function(container) {
    $('#quiz-retry-button').click(function(reset) {
       quiz.render(quiz_container);
    });
-    
+   document.getElementById("answer").classList.add("hidden");
     }
     
    
